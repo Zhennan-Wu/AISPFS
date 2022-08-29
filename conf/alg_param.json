@@ -1,0 +1,12 @@
+{
+    "epids": [12],
+    "em_steps": [3],
+    "look_ahead_depths": [9],
+    "act_seq_sample_size": 20,
+    "full_traj_sample_size": 50,
+    "fwd_lbp_iter_num": 100,
+    "bwd_lbp_iter_num": 100,
+    "mfvi_max_iter": 100,
+    "csvi_max_iter": 10,
+    "vi_conv_threshold": 1e-1
+}

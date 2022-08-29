@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH -p largememory
+#SBATCH -o ../server_logs/outputs/job_%j.txt
+#SBATCH -e ../server_logs/errors/job_%j.err
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=zwu1@iu.edu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=48
+#SBATCH --time=4-00:00:00
+#SBATCH --mem=502G
+
+eval "$(conda shell.bash hook)"
+conda activate vi_lbp
+
+
+echo $INS $ALGORITHM $ITER
+srun python3 main.py -i $INS -a $ALGORITHM 
