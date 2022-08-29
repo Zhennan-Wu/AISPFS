@@ -2,7 +2,7 @@
 
 ## Usage
 - Download the repository and unzip the planning domain file "spudd_sperseus.zip" under the current directory.
-- Install the required packages `pip install -r requirements`.
+- Install the required packages `pip install -r requirements`, support `python 3.8` and above.
 - To run the experiments run `python3 main.py -i <instance full name> -a <algorithms to run> `. For example, `python3 main.py -i sysadmin_inst_mdp__1.spudd elevators_inst_mdp__5.spudd sysadmin_inst_mdp__2.spudd -a mfvi_bwd fwd_lbp random`. If given no parameter, the program will run all 60 instances from 6 domains on all algorithms (mfvi_bwd, mfvi_fwd, mfvi_bwd_noS, bwd_lbp, fwd_lbp, csvi_bwd, csvi_fwd, exp_mfvi_bwd, exp_csvi_bwd). 
   - For running the demo problem, use (demo_mfvi_bwd, demo_mfvi_bwd_med, demo_mfvi_bwd_noS, demo_mfvi_bwd_main_all, demo_csvi_bwd, random) for algorithm parameters to get the detailed plotting and print out. The demo instance names include (demo_inst_mdp__1, demo_inst_mdp__2, demo_inst_mdp__3). To regenerate the ELBO plotting in other problem domains, please run the corresponding demo version of the algorithm on the problem instance.
 - To visulize the results
