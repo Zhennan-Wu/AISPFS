@@ -116,7 +116,7 @@ def aggre(algs, param_path, plotting = True):
         xposition = [0.5, 10.5, 20.5, 30.5, 40.5, 50.5, 60.5]
         for xc in xposition:
             ax.axvline(x=xc, color='black', linestyle='--', linewidth=0.3)
-        # x = [9, 19, 29, 39, 49, 59]
+        
         x = [5.5, 15.5, 25.5, 35.5, 45.5, 55.5]
         plt.xticks(x, Domains, fontweight='bold', fontsize=14)
         # fig.autofmt_xdate()
@@ -125,8 +125,6 @@ def aggre(algs, param_path, plotting = True):
             print('plot title will be wrong')
         if (len(alg) == 1):
             ax.set_title('{}'.format(plots_name[algs[0]]), fontdict={'fontsize': 18})
-        # elif (len(algs) == 3 and len(algs[0]) == len(algs[1]) and algs[0] != 'sogbofa' and algs[1] != 'sogbofa'):
-        #     ax.title.set_text('{}'.format(plots_name[algs[0]]))
         elif (len(algs) == 4):
             ax.set_title('{} VS {} VS {}'.format(labels[algs[0]], labels[algs[1]], labels[algs[2]]), fontdict={'fontsize': 18})
         elif (len(algs) == 3):
@@ -136,7 +134,7 @@ def aggre(algs, param_path, plotting = True):
 
         ax.set_ylabel("Score", fontweight='bold', fontsize=15)
         # ax.set_ylim([-2, 4])
-        # ax.set_ylim([-1.5, 3.5])
+        ax.set_ylim([-1.5, 3.5])
         legend_properties = {'weight':'bold', 'size': 14}
         ax.legend(loc='upper left', prop = legend_properties)
         plot_dir = '../results/plots'
