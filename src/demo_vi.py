@@ -213,9 +213,9 @@ def demo_mfvi_bwd_main(parser, vi_bwd, horizon, log_file, elbo_check, t_idx, ver
                         print("Reward update elbo not increasing, {}, {}".format(elbo_lst, elbo))
                     elbo_lst.append(elbo)
                     elbo_footstep.append('r_{}'.format(time_for_reward))
-                    reward_elbo_contri += elbo_lst[-1] - elbo_lst[-2]
-                    reward_elbo_contri_lst.append(reward_elbo_contri)
-                    reward_elbo_dynamic += elbo_lst[-1] - elbo_lst[-2]
+                    connect_elbo_contri += elbo_lst[-1] - elbo_lst[-2]
+                    connect_elbo_contri_lst.append(connect_elbo_contri)
+                    connect_elbo_dynamic += elbo_lst[-1] - elbo_lst[-2] 
                 end = timing.time()
                 if (time_debug):
                     print('MFVI reward variable update use {} second'.format(end - start))
