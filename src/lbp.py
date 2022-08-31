@@ -139,7 +139,7 @@ def lbp_fwd_main_jax(parser, alg_struc, policy, horizon, init_state, iter_num):
                 policy_factors: jax.numpy.log(policy_probs)
         }
         )
-        bp_arrays = bp.run_bp(bp_arrays, num_iters=iter_num, damping=0.5)
+        bp_arrays = bp.run_bp(bp_arrays, num_iters=iter_num, damping=0)
         beliefs = bp.get_beliefs(bp_arrays)
         marginals = infer.get_marginals(beliefs)
         # potential bug to find the right variable
@@ -186,7 +186,7 @@ def lbp_bwd_main(parser, alg_struc, init_state, iter_num):
         }
     )
 
-    bp_arrays = bp.run_bp(bp_arrays, num_iters=iter_num, damping=0.5)
+    bp_arrays = bp.run_bp(bp_arrays, num_iters=iter_num, damping=0)
     beliefs = bp.get_beliefs(bp_arrays)
     marginals = infer.get_marginals(beliefs)
     for var_type in marginals.keys():
